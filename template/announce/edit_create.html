@@ -1,0 +1,114 @@
+<div class="built-container-silver">
+    <form enctype="multipart/form-data" id="form-announce" method='post' action="/announce/insert">
+    <input type="hidden" name="uid" value="#UPLOADID" />
+
+    <div class="picture-knope legend">Подача нового объявления</div>
+    <div class="block-context">
+        <div style="display: #FASTREG;">
+            <div class="caption">E-Mail. Укажите адрес вашей электронной почты для управления поданным объявлением (необязательно)</div>
+            <div>
+                <input id="mail" name="mail" type="text" value="" />
+            </div>
+        </div>
+
+        <div>
+            <div class="caption">Город:</div>
+            <select id="city" name="city"><option value="">Выберите город</option>#CITY</select>
+            <hr />
+        </div>
+
+        <div>
+            <div class="caption">Выберите рубрику:</div>
+            <div>
+                <select id="division" name="category" onchange="return annkit.listcat(this);">
+                    <option value="">Выберите рубрику</option>
+                    #DIVISION
+                </select>
+            </div>
+            <hr />
+        </div>
+
+        <div>
+            <div id="extfields"></div>
+        </div>
+
+        <div>
+            <div class="caption">Выберите тип сделки:</div>
+            <select id="action" name="action">
+                <option value="">Выберите рубрику</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="legend">Описание</div>
+    <div class="block-context">
+
+        <div>
+            <div class="caption">Заголовок объявления:</div>
+            <input id="caption" name="caption" type="text" maxlength="90" size="120"/>
+        </div>
+
+        <div>
+            <div class="caption">Текст объявления:</div>
+            <textarea class="bbcode" id="textdata" name="textdata" cols="93" rows="15"> </textarea>
+        </div>
+
+        <div>
+            <div class="caption">Стоимость:</div>
+            <input id="cost" name="cost" type="text" maxlength="10" size="4" value="0"/>
+            <select id="currency" name="currency">#CURRENCY</select>
+            <hr />
+        </div>
+
+        <div style="display: inline-block; min-height: 230px;">
+            <div class="caption">Фотографии:</div>
+            #AJAXPICTPL
+            <div id="photo_fileupload" style="float: left; width: 140px;">
+                <label class="fileinput-button">
+                    <span>Главная</span>
+                    <input name="photo[]" type="file" />
+                </label>
+                <br /><br />
+                <div class="files"></div>
+            </div>
+            <div id="thumb_fileupload" style="margin-left: 145px;">
+                <label class="fileinput-button">
+                    <span>Еще фото</span>
+                    <input name="thumb[]" type="file" multiple="1" />
+                </label>
+                <br /><br />
+                <div class="files"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="legend picture-contact">Контактные данные:</div>
+    <div class="block-context">
+
+        <div>
+            #CONTACT
+        </div>
+    </div>
+
+    <div class="legend picture-knope">Защитный код на картинке:</div>
+    <div class="block-context">
+        <div style="display: inline-block;">
+            <div class='captcha'>
+                <a href='javascript:;' id="caplink"><img src="/ajax/captcha" id="capimage" /></a>
+            </div>
+            <div style="float: left;">
+                <input type="text" name="captcha" id="captcha" maxlength="6"/><br />
+                <input id="submit" type="submit" value="Добавить объявление" />
+            </div>
+        </div>
+    </div>
+
+    </form>
+</div>
+
+<script>
+$(function () {
+    CreatePhotoLoader("#photo_fileupload", #PHOTOSIZE, 1, "photo[]", #JSONPHOTO);
+    CreatePhotoLoader("#thumb_fileupload", #THUMBSIZE, #PHOTOCOUNT-1, "thumb[]", #JSONTHUMB);
+});
+</script>

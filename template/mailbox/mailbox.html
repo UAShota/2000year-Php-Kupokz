@@ -1,0 +1,19 @@
+<div id="maillist">
+    <div style="text-align: center; padding: 5px; font-weight: bold;">
+        Входящих: #INBOX Исходящих: #OUTBOX
+    </div>
+    <div class="shadow-988" style="margin-left: 50px;"></div>
+    <form id='form-order' name="mailcrop" method="post" action="/cabuser/mailbox/crop">
+        <input type="hidden" id="box" name="box" value="#BOXID"/>
+        <div class="maillist">
+            #OUT
+        </div>
+        <p>
+            <a class="link-button" href='javascript:;' onclick='return InputCheckAll();' >Выделить все</a>
+            <input type="submit" value="Удалить отмеченные" />
+        </p>
+    </form>
+    <div class="selector-table announce-pageselector">
+        #PAGESELECTOR
+    </div>
+</div>

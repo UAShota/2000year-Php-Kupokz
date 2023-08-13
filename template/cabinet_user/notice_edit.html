@@ -1,0 +1,32 @@
+<div class="built-container-silver">
+    <form id="user_change_password" method="post" action="/cabuser/notice_post">
+
+    <div class="legend picture-knope">Уведомления</div>
+    <div class="block-context">
+
+        <div>
+            <div class="caption">Уведомления:</div>
+            <input type="checkbox" id="comment" name="comment" #COMMENT />
+            <label for="comment">Комментарии к объявлению</label>
+        </div>
+
+        <div>
+            <input type="checkbox" id="mailcheck" name="mailbox" #MAILBOX />
+            <label for="mailcheck">Сообщение в личную почту</label>
+        </div>
+    </div>
+
+    <div class="legend picture-knope">Настройки</div>
+    <div class="block-context">
+
+        <div>
+            <div class="caption">Настройки объявлений:</div>
+            <input type="checkbox" id="viewother" name="viewother" #VIEWOTHER />
+            <label for="viewother">Не отображать другие мои объявления</label>
+        </div>
+
+    </div>
+
+    <div class="legend"><input type="submit" value="Сохранить изменения" /></div>
+    </form>
+</div>

@@ -1,0 +1,21 @@
+<div class="admin-editor" style="padding: 10px;">
+    <form enctype="multipart/form-data" method="post" action="/admin/banner=postcreate">
+    <table>
+        <tr>
+            <td>Наименование:</td>
+            <td><input name="caption" type="text" maxlength="100" size="100"/></td>
+        </tr>
+        <tr>
+            <td>Город:</td>
+            <td><select name="city">#CITYLIST</select></td>
+        </tr>
+        <tr>
+            <td>Баннер:</td>
+            <td><input type="file" name="file"/></td>
+        </tr>
+        <tr>
+            <td colspan="2"><input type="submit" value="Добавить баннер" /></td>
+        </tr>
+    </table>
+    </form>
+</div>

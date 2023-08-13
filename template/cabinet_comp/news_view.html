@@ -1,0 +1,32 @@
+<div class="built-container-silver">
+    <div class="legend picture-knope">Публикация новости</div>
+    <div class="block-context">
+
+        <form id="news-post" action="/cabcomp/newspost" method="post">
+            <input type="hidden" name="id" value="#IDNEWS" />
+
+            <div style="display: inline-block;">
+                <div style="float: left; width: 600px;">
+                    <div class="caption">Заголовок новости</div>
+                    <input name="caption" id="caption" type="text" maxlength="80" style="width: 580px;" value="#CAPTION"/>
+                </div>
+                <div style="float: right;">
+                    <div class="caption">Дата</div>
+                    <input name="datelife" id="datepicker" type="text" maxlength="10" style="width: 100px;" value="#DATELIFE"/>
+                </div>
+            </div>
+
+            <div class="caption">Текст новости</div>
+            <textarea name="textdata" class="bbcodefull" cols="76" rows="15" style="width: 710px;">#TEXTDATA</textarea>
+            <br />
+            <input type="submit" value="Опубликовать" />
+        </form>
+    </div>
+
+    <div class="legend picture-knope">Опубликованные новости</div>
+    <div class="block-context">
+        <div id="news">
+            #CONTENT
+        </div>
+    </div>
+</div>

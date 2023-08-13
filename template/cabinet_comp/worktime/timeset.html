@@ -1,0 +1,21 @@
+<form id="timeset">
+    <div id="timework">
+        c <select name="tset[]" class="fine">#WORKSTARTHOUR</select> : <select name="tset[]" class="fine">#WORKSTARTMIN</select>
+        по <select name="tset[]" class="fine">#WORKENDHOUR</select> : <select name="tset[]" class="fine">#WORKENDMIN</select>
+    </div>
+    <div class="break" style="text-align: center;">
+        <input name="break" id="break" type="checkbox"  onclick="setSheetVisible(timebreak, this);" #CHECKED /> <label for="break">Перерыв</label>
+    </div>
+    <div id="timebreak" style="display: #DISPLAY;">
+        c <select name="tset[]" class="fine">#BREAKSTARTHOUR</select> : <select name="tset[]" class="fine">#BREAKSTARTMIN</select>
+        по <select name="tset[]" class="fine">#BREAKENDHOUR</select> : <select name="tset[]" class="fine">#BREAKENDMIN</select>
+    </div>
+    <div style="display: inline-block; width: 100%; margin-top: 15px;">
+        <div style="float: left;">
+            <input type="submit" onclick="return worktime.timeset(#DAYNUMBER);" value="Сохранить" />
+        </div>
+        <div style="float: right;">
+            <input type="reset" onclick="return defkit.dialogclose();" value="Отмена" />
+        </div>
+    </div>
+</form>

@@ -1,0 +1,66 @@
+#HEADER
+
+<div id="main-userpanel" class="wrapped-width">
+    <div class="wrapped-margin">
+        #USERDATA
+        <div id="ajaxloader">
+            <img src="/images/ajax-progress.gif" height="10px" width="80px" style="float: left;"/>
+        </div>
+    </div>
+</div>
+
+<div id="main-#TRADESIDE" style="margin-top: 29px;">
+    <div id="main-#TRADECOLOR">
+        <div id="main-header" class="wrapped-margin">
+            <div id="main-city" class="popup-menu" onmouseover="return CtxMenuShow(this)" onmouseout="return CtxMenuHide(this)">
+                Ваш регион: <a class="span" href="/?mixed=citylist">#CITYNAME</a>
+                <div class="popup-hidden" style="right: 0;">
+                    <ul>
+                        #CITYLIST
+                        <li><a href="/?mixed=citylist">Другой город</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div id="main-searchpanel">
+                <div class="block-search">
+                    <a class="block-goback" href="http://#SITECOMP"></a>
+                    <!-- Поиск -->
+                    <form id="main-search" method="get" action="/">
+                        <div class="controls">
+                            <input type="hidden" name="#TRADEPART"/>
+                            <input style="width: 380px;" id="fl_text" name="fl_text" type="text" placeholder="Ключевое слово или фраза" value="#FLTXT"/>
+                            <select name="fl_cat">#FLCAT</select>
+                            <input type="submit" class="submit" value="Найти" />
+                        </div>
+                        <!-- Пример поиска -->
+                        <div class="sample">
+                            Например: <a id="searchsample" href="javascript:;">Грузоперевозки</a>
+                        </div>
+                        <!-- Кнопки навигации -->
+                        <div id="main-navigation">
+                            <a href="/com"><div class="navigation-company">Компании</div></a>
+                            <a href="/"><div class="navigation-product">Объявления, Услуги</div></a>
+                            <a href="#TRADELINK"><div class="navigation-link">Добавить #TRADEITEM</div></a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div id="main-dynamic" class="wrapped-margin">
+            #CONTENT
+        </div>
+        <div id="main-partner" class="wrapped-margin">
+            <div style="padding-left: 80px; margin-top: 20px;">
+                <div class="label">Наши партнеры:</div>
+                <a rel="nofollow" href="http://#SITEPATH/?direct=http://fonegallery.narod.ru&fast" target="_blank"><img src="http://fantasyflash.ru/bf.gif" alt="фоны для сайтов" border="0" width="88" height="31"/></a>
+            </div>
+        </div>
+
+        <!-- Подвал -->
+        #FOOTER
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+<div class="built-container-silver">
+    <form id="form-support" method="post" action="/cabuser/mailbox/supportpost">
+
+    <div class="legend picture-contact">Служба поддержки <a href="mailto:#MAILSUPPORT">#MAILSUPPORT</a></div>
+    <div class="block-context">
+
+        <div>
+            <div class="caption">Причина Вашего обращения:</div>
+            <div ><textarea name="textdata" cols="41" rows="5" placeholder='Напишите текст обращения'></textarea></div>
+        </div>
+
+        <div>
+            <div class="caption">Ваш почтовый ящик:</div>
+            <div ><input type="text" name="email" id="email" placeholder='Укажите почтовый ящик' size="53"/></div>
+            <hr />
+        </div>
+
+        <div>
+            <div class="caption">Защитный код:</div>
+            <div style="display: inline-block;">
+                <div class='captcha'>
+                    <a href='javascript:;' id="caplink"><img src="/ajax/captcha" id="capimage" /></a>
+                </div>
+                <div style="float: left;">
+                    <input type="text" name="captcha" id="captcha" maxlength="6"/><br />
+                    <input id="submit" type="submit" value="Отправить сообщение" />
+                </div>
+            </div>
+        </div>
+
+    </div>
+    </form>
+</div>

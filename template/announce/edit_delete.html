@@ -1,0 +1,29 @@
+<div class="built-container-silver">
+    <form id="form-announce" method='post' action="/announce/delete">
+    <input type="hidden" name="id" value="#ANNOUNCEID" />
+
+    <div class="legend picture-knope">Удаление объявления</div>
+    <div class="block-context">
+        <h3>
+            <a href="/announce/#ANNOUNCEID">#CAPTION</a>
+        </h3>
+        <div>
+            #TEXTDATA
+        </div>
+    </div>
+
+    <div class="legend picture-knope">Защитный код на картинке:</div>
+    <div class="block-context">
+        <div style="display: inline-block;">
+            <div class='captcha'>
+                <a href='javascript:;' id="caplink"><img src="/ajax/captcha" id="capimage" /></a>
+            </div>
+            <div style="float: left;">
+                <input type="text" name="captcha" id="captcha" maxlength="6"/><br />
+                <input id="submit" type="submit" value="Удалить объявление" />
+            </div>
+        </div>
+    </div>
+
+    </form>
+</div>

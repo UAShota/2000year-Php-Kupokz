@@ -1,0 +1,75 @@
+<div class="built-container-silver">
+    <form id="fileupload" enctype="multipart/form-data" method="post" action="/cabuser/account_post">
+    <input type="hidden" name="uid" value="#UPLOADID" />
+
+    <div class="legend picture-persone">Персональные данные</div>
+    <div class="block-context">
+
+        <div style="display: inline-block;">
+            <div class="caption">Фамилия:</div>
+            <div><input type="text" name="name_last" value="#NAMELAST" maxlength="40"/></div>
+        </div>
+
+        <div style="display: inline-block;">
+            <div class="caption">Имя:</div>
+            <div><input type="text" name="name_first" value="#NAMEFIRST" maxlength="40"/></div>
+        </div>
+
+        <div style="display: inline-block;">
+            <div class="caption">Отчество:</div>
+            <div><input type="text" name="name_middle" value="#NAMEMIDDLE" maxlength="40"/></div>
+        </div>
+
+        <div style="display: inline-block;">
+            <div class="caption">Пол:</div>
+            <div><select name="name_gender">#NAMEGENDER</select></div>
+        </div>
+        <hr />
+
+        <div style="min-height: 230px; float: left;">
+            <div class="caption">Фотография:</div>
+            #AJAXPICTPL
+            <div id="avatar_fileupload" style="float: left; width: 140px;">
+                <label class="fileinput-button">
+                    <span>Выбрать</span>
+                    <input name="files[]" type="file" />
+                </label>
+                <br /><br />
+                <div class="files"></div>
+            </div>
+        </div>
+
+        <div style="margin-left: 140px;">
+            <div class="caption">Краткое описание:</div>
+            <textarea class="bbcode" id="textdata" name="textdata" cols="70" rows="12">#TEXTDATA</textarea>
+        </div>
+    </div>
+
+    <div class="legend picture-address">Ваш адрес</div>
+    <div class="block-context">
+
+        <div class="caption">Город:</div>
+        <div><select name="id_city">#CITY</select></div>
+
+        <div class="caption">Физический адрес:</div>
+        <div>
+            <input type="text" name="location_street" value="#LOCATIONSTREET" maxlength="250" size="70"/>
+        </div>
+    </div>
+
+    <div class="legend picture-contact">Контактная информация</div>
+    <div class="block-context">
+        <div>
+            #CONTACT
+        </div>
+    </div>
+
+    <div class="legend"><input type="submit" value="Сохранить изменения" /></div>
+    </form>
+</div>
+
+<script>
+$(function () {
+    CreatePhotoLoader("#avatar_fileupload", #PHOTOSIZE, 1, "avatar[]", #JSONPHOTO);
+});
+</script>

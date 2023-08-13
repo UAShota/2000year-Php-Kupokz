@@ -1,0 +1,27 @@
+<form id="form-complaint" method="post" action="/cabuser/mailbox/complaintpost" style="padding: 15px 22px 10px 22px;">
+<input type="hidden" name="announce" value="#ANNOUNCEID"/>
+
+<div>
+    <div class="caption">Причина жалобы:</div>
+    <div ><select name="reason">#REASONLIST</select></div>
+</div>
+
+<div>
+    <div class="caption">Описание жалобы:</div>
+    <div><textarea name="textdata" cols="41" rows="5" placeholder='Напишите текст жалобы'></textarea></div>
+    <hr />
+</div>
+
+<div>
+    <div class="caption">Защитный код:</div>
+    <div style="display: inline-block;">
+        <div class='captcha'>
+            <a href='javascript:;' id="caplink"><img src="/ajax/captcha" id="capimage" /></a>
+        </div>
+        <div style="float: left;">
+            <input type="text" name="captcha" id="captcha" maxlength="6"/><br />
+            <input id="submit" type="submit" value="Отправить сообщение" />
+        </div>
+    </div>
+</div>
+</form>

@@ -1,0 +1,68 @@
+<div class="built-container">
+    <div class="header-small orderlist-table">
+        <div class="baseline">
+            <div class="left"></div>
+            <div class="right"></div>
+            <form id="form-order">
+                <input type="hidden" name="page" id="page"/>
+            </form>
+        </div>
+    </div>
+
+    <div class="announce-data">
+        <div style='margin-left: 210px;'>
+            <div class="selector-table" id="pageselector">
+                #PAGESELECTOR
+            </div>
+            <div id="announce-data">
+                #BLOCKDATA
+            </div>
+        </div>
+    </div>
+
+    <div style="position: fixed; top: 400px; width: 200px; left: 1;">
+        <form id="form-announce">
+        <input type="button" value="Выбрать все" onclick="SelAll();"/> <input type="button" value="Убрать все" onclick="UnSelAll();"/>
+        <hr />
+        <div>
+            <select id="division" name="division" onchange="return AnQueryCategory(this);">
+                <option value="">Выберите рубрику</option>
+                #DIVISION
+            </select>
+        </div>
+        <input type="submit" value="Отправить" style="width: 220px;" onclick="return MissionSerenity();"/>
+        </form>
+    </div>
+
+    <div class="selector-table" style="margin: 0px 10px 10px 10px;">
+        <div id="pageselector-bottom">#PAGESELECTOR</div>
+        <br/><a href='javascript:;' onclick='scroll(0,0); return false;'>Наверх</a>
+    </div>
+</div>
+<script>
+    function SelAll() {
+        $("input:checkbox").attr("checked", true);
+    }
+    function UnSelAll() {
+        $("input:checkbox").attr("checked", false);
+    }
+    function MissionSerenity()
+    {
+         if ($("#form-announce").validationEngine('validate') == false) return false;
+
+        $("input:checkbox:checked").each(function(q, e){
+            var pid = $(e).attr("name");
+            var cid = $("select[name=category]:last").val();
+
+            $.post('?admin&announce=move', {id: pid, cat: cid}, function(Request) {
+                if (Request == "1") {
+                    $(e).parent().html(" <font color=silver> Moved :)</font><br/>");
+                } else {
+                    $(e).parent().html(" <font color=red> Failed :(</font><br/>");
+                }
+            });
+        });
+
+        return false;
+    }
+</script>

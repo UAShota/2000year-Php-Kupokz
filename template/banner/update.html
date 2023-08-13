@@ -1,0 +1,25 @@
+<div class="built-container-silver">
+    <form id="form-banner" method="post" enctype="multipart/form-data" action="/cabuser/banner/&m=post">
+    <input type="hidden" name="id" value="#BANNERID" />
+    <div class="legend picture-knope">Изменение баннера</div>
+    <div class="block-context">
+        <table width="100%">
+            <tr>
+                <td>Выберите баннер:</td>
+                <td><input name="file" type="file" /> размер <b>1000х90</b> не более <b>300кб</b> оставьте пустым, если не хотите менять картинку</td>
+            </tr>
+            <tr>
+                <td>Название:</td>
+                <td><input id="caption" name="caption" type="text" style="width: 600px;" value="#CAPTION" /></td>
+            </tr>
+            <tr>
+                <td>Ссылка перехода:</td>
+                <td><input id="linkurl" name="linkurl" type="text" style="width: 600px;" value="#LINKURL" /></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center"><input id="submit" type="submit" value="Сохранить баннер" /></td>
+            </tr>
+        </table>
+    </div>
+    </form>
+</div>

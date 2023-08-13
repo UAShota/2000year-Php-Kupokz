@@ -1,0 +1,66 @@
+<!--todo-->
+<style>
+    table {
+        margin: 0px;
+        padding: 0px;
+    }
+    th {
+        text-align: left;
+        border-bottom: 1px dashed silver;
+        padding: 3px;
+    }
+    td {
+        border-right: 1px dashed silver;
+        border-bottom: 1px dashed silver;
+        padding: 3px;
+    }
+    span {
+        font-size: 14px;
+        font-weight: bold;
+    }
+</style>
+<div style="padding: 0px 50px;">
+    <div>
+        <span>Заявка №#TICKETID</span>
+        &nbsp;#DATELIFE [#STATUS]
+        &nbsp;<a href="/cabuser/ticket">Назад к заявкам</a>
+    </div>
+    <form method="post">
+    <input type="hidden" name="tickets[#TICKETID]" />
+    <table class="announce-table" style="display: table; border: none; padding-top: 0px; width: 100%;">
+        <tr>
+            <th colspan="10"></th>
+        </tr>
+        <tr>
+            <td rowspan="2" style="border-bottom: none; border-right: none; vertical-align: top;">
+                <b>Продавец</b><br />
+                <p><a href="#COMPATH">#COMPANY</a></p>
+                #CONTACT
+            </td>
+            <td style="border-left: 1px dashed silver;">
+                <div style="width: 130px; float: left;">
+                    <a href="#COMPATH/item/#ANNOUNCEID"><img class="photo lazy" data-original="/#IMAGEPATH" src="/images/ajax-loader.gif" /></a>
+                </div>
+                <div><p><b><a href="#COMPATH/item/#ANNOUNCEID">#CAPTION</a></b></p></div>
+                <div style="clear: left;">#USERTEXT</div>
+            </td>
+            <td style="text-align: center;">
+                <h3>Кол-во</h3>
+                <p>#COUNT #MEAS</p>
+            </td>
+            <td style="text-align: center;">
+                <h3>Сумма заказа</h3>
+                <p>#SUMM #LITERAL</p>
+            </td>
+        </tr>
+        <tr>
+            <td style="border: none;">
+                <p>
+                    <input style="display: #STDEL;" type="submit" value="Отменить заявку" name="movedel"/>
+                    <input style="display: #STARC;" type="submit" value="Перенести архив" name="movearc"/>
+                </p>
+            </td>
+        </tr>
+    </table>
+    </form>
+</div>

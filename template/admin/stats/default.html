@@ -1,0 +1,38 @@
+<div class="adm-subtitle">
+    <a href="/admin/stats">Обзор</a> |
+    <a href="/admin/stats=announce">Объявления</a>
+</div>
+<div style="padding: 10px;">
+    <div>
+        #DATAACTION
+    </div>
+    <div>
+        <table class="state-container">
+            <tr class="header-simple">
+                <td colspan="6"><center>Сохраненная статистика</center></td>
+            </tr>
+            <tr class="header-simple" style="border: none;">
+                <td>Дата:</td>
+                <td>Юзер:</td>
+                <td>Гость:</td>
+                <td>Агент:</td>
+                <td>Парсер:</td>
+                <td>Удалено:</td>
+                <td>Компании:</td>
+            </tr>
+            #DATASTORED
+        </table>
+    </div>
+</div>
+<script>
+    function AdminPostStatAnnounce(Index, Value)
+    {
+        defkit.barShow();
+        $.get('/admin/stats=statann&aj&value=' + Value, [],
+            function(Response) {
+                $("#stat-" + Index).remove();
+                defkit.barHide();
+            }
+        );
+    }
+</script>

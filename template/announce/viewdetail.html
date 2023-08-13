@@ -1,0 +1,56 @@
+<div class="built-block">
+    #BANNERHEADER
+    <div class="header-small">
+        <div id="category-relink">
+            #CATEGORY #ACTION &raquo; <span>Объявление ##ANNOUNCEID</span>
+        </div>
+    </div>
+
+    <div id="announce-table" style="padding: 0px;">
+        <div style="float: left; width: 210px;">
+            <img class="lazy" data-original="#IMAGEPATH" src="images/ajax-loader.gif" width="210px" height="210px" />
+            <div id="gallery"><ul>#LIGHTBOX</ul></div>
+            <div class="header-small">Контакты</div>
+            <div class="header-small-data">#CONTACT</div>
+        </div>
+
+        <div style="float: right; width: 210px;">
+            <div class="header-small-data">
+                Податель: <a class="icon-user" href="/user/#USERID">#USERNAME</a>
+            </div>
+            <img class="lazy" data-original="#USERPHOTO" src="images/ajax-loader.gif" width="210px" height="210px"/>
+            <div class="header-small">Разное</div>
+            <div class="header-small-data" id="moderate">#MENUCONTEXT</div>
+        </div>
+
+        <div style="margin-left: 220px; margin-right: 220px;">
+            <h3 class="separator-large-bottom">#CAPTION</h3>
+            <div style="line-height: 30px; margin-bottom: 15px;">
+                <div style="padding: 5px;">
+                    <b>#CITY</b>, #ACTION, #DATELIFE
+                    <div class="#CLASS" style="float: right;">
+                        <div class="announce-cost">#COST #CURRENCY</div><div class='announce-tag'>#TAGDESC</div>
+                    </div>
+                    <div class="fav #FAVOURITE" style="float: right;" onclick="AnQueryFavourite(this, #ANNOUNCEID)" title="Добавить в избранное"></div>
+                </div>
+            </div>
+            <div>#TEXTDATA</div>
+
+            <div id="comments">
+                #COMMENTS
+                #COMMENTDIALOG
+            </div>
+
+            <div style="margin-bottom: 10px;">
+                <div class="separator-large-bottom">Похожие объявления</div>
+                #MATCHED
+                <div class="separator-large-bottom">Объявления автора</div>
+                #SIMILATE
+            </div>
+
+        </div>
+    </div>
+</div>
+<script>
+    CreateGallery();
+</script>

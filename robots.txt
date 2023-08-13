@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /cabuser/
+Disallow: /cabcomp/
+Disallow: /payment/
+Disallow: /report/
+Host: kupo.kz

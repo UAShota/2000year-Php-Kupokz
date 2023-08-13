@@ -1,0 +1,31 @@
+<div id="mailbox" style="margin: 0px auto;">
+    <div>
+        <div style="float: left; font-size: 17px; font-weight: bold;">Ответ на сообщение</div>
+        <a class="button-silver" style="float: right;" href="/cabuser/mailbox">Вернуться к сообщениям</a>
+    </div>
+
+    <form method="post" action="/cabuser/mailbox/post">
+    <input type="hidden" name="id" value="#TROLLID"/>
+    <table width="100%">
+        <tr><td rowspan="5" width="200px" style="vertical-align: top;">
+            <a href="http://#SITEPATH/user/#USERID" style="display: block;">
+                <img class="lazy" data-original="/#IMAGEPATH" src="/images/ajax-loader.gif" width="190x" height="190px" />
+            </a>
+        </td></tr>
+        <tr><td class="title">
+            Кому: <a href="/user/#TROLLID">#USERNAME</a>
+        </td></tr>
+        <tr><td>
+            <p class="title">Тема:</p>
+            <input name="mailcaption" id="mailcaption" class="mailtext" placeholder="Тема сообщения" value="RE: #CAPTION" type="text" maxlength="100" size="80"/>
+        </td></tr>
+        <tr><td>
+            <p class="title">Сообщение:</p>
+            <textarea name="mailtext" id="mailtext" class="mailtext" placeholder="Текст сообщения" cols="62" rows="6"></textarea>
+        </td></tr>
+        <tr><td>
+            <input type="submit" value="Отправить"/>
+        </td></tr>
+    </table>
+    </form>
+</div>

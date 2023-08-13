@@ -1,0 +1,76 @@
+#compress
+<ifmodule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/css application/javascript
+    AddOutputFilterByType DEFLATE application/x-javascript text/javascript application/json
+    AddOutputFilterByType DEFLATE application/xml image/svg+xml application/rss+xml
+    SetOutputFilter DEFLATE
+    <ifmodule mod_setenvif.c>
+        BrowserMatch ^Mozilla/4 gzip-only-text/html
+        BrowserMatch ^Mozilla/4.0[678] no-gzip
+        BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
+    </ifmodule>
+</ifmodule>
+
+#options
+RewriteEngine On
+RewriteBase /
+Options -Indexes
+Options +FollowSymLinks
+
+#errors
+ErrorDocument 404 /errors/404.php
+
+#www
+RewriteCond %{HTTP_HOST}  ^www\.(.+)$  [NC]
+RewriteRule ^(.*)         http://%1/$1 [L,R=301]
+
+#system
+RewriteRule ^ajax/(.+?)$ ?ajax=$1 [L]
+RewriteRule ^mixed/(.+?)$ ?mixed=$1 [L]
+RewriteRule ^admin/(.+?)$ ?admin&$1 [L]
+RewriteRule ^admin/$ ?admin [L]
+RewriteRule ^admin$ ?admin [L]
+
+#com
+RewriteRule ^com/([^/.]+)$ ?com=$1 [L]
+RewriteRule ^com/$ ?com [L]
+RewriteRule ^com$ ?com [L]
+
+#info
+RewriteRule ^info/([^/.]+)$ ?info=$1 [L]
+
+#announce
+RewriteRule ^cat/([^/.]+)$ ?announce&cat=$1 [L]
+RewriteRule ^cat$ ?announce&cat [L]
+RewriteRule ^announce/([^/.]+)$ ?announce=$1 [L]
+RewriteRule ^user/([^/.]+)$ ?user=$1 [L]
+
+#cabinet
+RewriteRule ^cabuser/([^/.]+)$ ?cabuser=$1 [L]
+RewriteRule ^cabuser/$ ?cabuser [L]
+RewriteRule ^cabuser$ ?cabuser [L]
+RewriteRule ^cabcomp/([^/.]+)$ ?cabcomp=$1 [L]
+RewriteRule ^cabcomp/$ ?cabcomp [L]
+RewriteRule ^cabcomp$ ?cabcomp [L]
+
+RewriteRule ^cabuser/([^/.]+)/([^/.]+)$ ?cabuser=$1&m=$2 [L]
+RewriteRule ^cabcomp/([^/.]+)/([^/.]+)$ ?cabcomp=$1&m=$2 [L]
+
+#company
+RewriteRule ^company/([^/.]+)$ ?company=$1 [L]
+RewriteRule ^company/$ ?company [L]
+RewriteRule ^company$ ?company [L]
+RewriteRule ^product/([^/.]+)$ ?m=product&group=$1 [L]
+RewriteRule ^product/$ ?m=product [L]
+RewriteRule ^product$ ?m=product [L]
+RewriteRule ^contact/$ ?m=contact [L]
+RewriteRule ^item/([^/.]+)$ ?m=item&id=$1 [L]
+RewriteRule ^news/([^/.]+)$ ?m=news&id=$1 [L]
+RewriteRule ^about/$ ?m=about [L]
+RewriteRule ^about$ ?m=about [L]
+
+#payment
+RewriteRule ^payment/([^/.]+)/([^/.]+)$ ?payment=$1&id=$2 [L]
+
+#report
+RewriteRule ^report/([^/.]+)/([^/.]+)$ ?report=$1&id=$2 [L]

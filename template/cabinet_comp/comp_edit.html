@@ -1,0 +1,49 @@
+<div class="built-container-silver">
+    <form id="company-register" action="/cabcomp/settingspost" method="post">
+    <input type="hidden" name="uid" value="#UPLOADID" />
+
+    <div class="legend picture-persone">Настройки компании</div>
+    <div class="block-context">
+        <div>
+            <div class="caption">Наименование компании:</div>
+            <div><input name="caption" id="caption" value="#CAPTION" type="text" maxlength="60" size="60"/></div>
+        </div>
+
+        <div>
+            <div class="caption">Ключевые слова, разделенные пробелами:</div>
+            <input id="textindex" name="textindex" type="text" maxlength="100" size="100" value="#TEXTINDEX" />
+        </div>
+
+        <div>
+            <div class="caption">Краткое описание (отображение при поиске):</div>
+            <textarea id="textview" name="textview" cols="77" rows="5">#TEXTVIEW</textarea>
+        </div>
+
+        <div style="float: left; min-height: 230px;">
+            <div class="caption">Логотип:</div>
+            #AJAXPICTPL
+            <div id="logotype_fileupload" style="float: left; width: 140px;">
+                <label class="fileinput-button">
+                    <span>Выбрать</span>
+                    <input name="files[]" type="file" />
+                </label>
+                <br /><br />
+                <div class="files"></div>
+            </div>
+        </div>
+
+        <div style="margin-left: 140px;">
+            <div class="caption">Описание компании:</div>
+            <textarea name="textdata" id="textdata" class="bbcodefull" cols="90" rows="30">#TEXTDATA</textarea>
+        </div>
+
+    </div>
+
+    <div class="legend"><input type="submit" value="Сохранить изменения" /></div>
+    </form>
+</div>
+<script>
+$(function () {
+    CreatePhotoLoader("#logotype_fileupload", #PHOTOSIZE, 1, "logotype[]", #JSONPHOTO);
+});
+</script>

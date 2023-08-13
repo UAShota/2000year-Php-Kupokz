@@ -1,0 +1,21 @@
+<div class="state-container">
+    <div class="header-simple">
+        <b><a href="http://#AUTODOMAIN.#SITEPATH">#CAPTION</a></b>
+        &raquo; <a href="/user/#USERID">#USERLOGIN</a>
+    </div>
+    <div style="padding: 6px;">
+
+        <form method="post" action="/admin/moder=company">
+            <input type="hidden" name="roove" value="#COMPANYID"/>
+            <p> Поддомен:
+            <select name="subdomain">
+                <option value='-1'>Отказать</option>
+                #DOMAINLIST
+                <option value='-2'>Разрешить</option>
+            </select>
+            <input type="submit" value="Подтвердить" />
+            </p>
+        </form>
+
+    </div>
+</div>

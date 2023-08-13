@@ -1,0 +1,14 @@
+<div id="announce-table" class="block stl-#TAGCLASS">
+  <div style="float: left; width: 550px !important;" class="stl-0 stl-#TAGCLASS">
+    <p><span class="#ACTIVE">Активировано до #TIMELIFE! </span>#CAPTION</p>
+    <div class="announce-cost">100500 тг.</div><div class='announce-tag'>#TAGNAME</div>
+    <ul>#DESCRIPTION</ul>
+  </div>
+  <div class="action">
+    <form method="post" action="/payment/apply/#ANNOUNCEID">
+        <input type="hidden" name="transform" value="#TAGLINK" />
+        <div>Стоимость: <b>БЕСПЛАТНО</b> <input type="submit" value="Подключить" /> </div>
+        <div>Срок действия: <b>#TIMELEFT ч.</b></div>
+    </form>
+  </div>
+</div>

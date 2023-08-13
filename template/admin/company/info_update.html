@@ -1,0 +1,58 @@
+<div class="built-container-silver">
+    <form enctype="multipart/form-data" id="form-announce-fast" method='post' action="/admin/company=infopostedit">
+    <input type="hidden" name="id" value="#IDCOMPANY" />
+
+    <div class="legend picture-knope">Управление информативной компанией</div>
+    <div class="block-context">
+        <div style="display: inline-block;">
+            <div class="caption">Выберите рубрику:</div>
+            <div>
+                #CATEGORY
+            </div>
+        </div>
+    </div>
+
+    <div class="legend picture-knope">Опсиание компании</div>
+    <div class="block-context">
+
+        <div>
+            <div class="caption">Название компании:</div>
+            <input id="caption" name="caption" type="text" maxlength="60" size="80" value="#CAPTION"/>
+        </div>
+
+        <div>
+            <div class="caption">Ключевые слова, разделенные пробелами:</div>
+            <input id="textindex" name="textindex" type="text" maxlength="100" size="80" value="#TEXTINDEX" />
+        </div>
+
+        <div>
+            <div class="caption">Краткое описание (отображение при поиске):</div>
+            <textarea id="textview" name="textview" cols="80" rows="5">#TEXTVIEW</textarea>
+        </div>
+
+        <div>
+            <div class="caption">Информация о компании</div>
+            <textarea class="bbcodefull" id="textdata" name="textdata" cols="81" rows="30">#TEXTDATA</textarea>
+        </div>
+    </div>
+
+    <div class="legend picture-address">Ваш адрес</div>
+    <div class="block-context">
+
+        <div class="caption">Город:</div>
+        <div><select name="id_city" id="id_city">#CITY</select></div>
+
+        <div class="caption">Физический адрес:</div>
+        <div><input name="location_street" type="text" maxlength="250" size="70" value="#LOCATION_STREET"/></div>
+    </div>
+
+    <div class="legend picture-contact">Контактная информация</div>
+    <div class="block-context">
+        <div>
+            #CONTACT
+        </div>
+    </div>
+
+    <div class="legend"><input type="submit" value="Сохранить изменения" /></div>
+    </form>
+</div>

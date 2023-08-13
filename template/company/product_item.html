@@ -1,0 +1,21 @@
+<div id="announce-table" class="#CLASS">
+    <div style="width: 90px; float: left;">
+        <a href="/item/#ANNOUNCEID"><img class="photo lazy" data-original="/#IMAGEPATH" src="/images/ajax-loader.gif"/></a>
+    </div>
+    <div class="fav #FAVOURITE" style="float: right;" onclick="AnQueryFavourite(this, #ANNOUNCEID)" title="Добавить в избранное"></div>
+    <div style="float: right; width: 140px;">
+        <div style="clear: left; padding: 10px 5px;">В наличии: #COUNT #MEAS</div>
+        <a href="/cabuser/ticket/trade&id=#ANNOUNCEID" onclick="return SilentDialog(this, 520, 'Заказ товара №#ANNOUNCEID');" class="button-item-trade">Заказать товар</a>
+    </div>
+    <div style="float: left; width: 460px;" >
+        <h3 class="caption"><a href="/item/#ANNOUNCEID">#CAPTION</a></h3>
+
+        <div class="#CLASS">
+            <div class="announce-cost">#COST #CURRENCY</div><div class='announce-tag'>#TAGDESC</div>
+        </div>
+
+        <div class="category-comp" style="clear: left;">
+            Рубрика: <a href="/product/#IDGROUP">#GROUP</a>
+        </div>
+    </div>
+</div>

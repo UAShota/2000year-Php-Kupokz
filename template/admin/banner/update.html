@@ -1,0 +1,28 @@
+<div class="admin-editor" style="padding: 10px;">
+    <form enctype="multipart/form-data" method="post" action="/admin/banner=postupdate&id=#BANNERID">
+    <table>
+        <tr>
+            <td>Наименование:</td>
+            <td><input name="caption" type="text" maxlength="100" size="100" value="#CAPTION"/></td>
+        </tr>
+        <tr>
+            <td>Город:</td>
+            <td><select name="city">#CITYLIST</select></td>
+        </tr>
+        <tr>
+            <td>Баннер:</td>
+            <td>
+                <input type="file" name="file"/>
+                <img src="#BANNERLINK/#BANNERID.jpg" width="676px" height="60px"/>
+            </td>
+        </tr>
+        <tr>
+            <td>Состояние:</td>
+            <td>#STATES</td>
+        </tr>
+        <tr>
+            <td colspan="2"><input type="submit" value="Сохранить изменения" /></td>
+        </tr>
+    </table>
+    </form>
+</div>

@@ -1,0 +1,50 @@
+<script id="template-upload" type="text/x-jquery-tmpl">
+<div class="template-upload template-upload-photo{{if error}} ui-state-error{{/if}}">
+    {{if error}}
+        <div class="error">Ошибка:
+            {{if error === 'maxFileSize'}}Файл слишком большой
+            {{else error === 'minFileSize'}}Файл слишком маленький
+            {{else error === 'acceptFileTypes'}}Недопустимый тип файла
+            {{else error === 'maxNumberOfFiles'}}Превышено допустимое количество файлов
+            {{else}}${error}
+            {{/if}}
+        </div>
+    {{else}}
+        <td class="preview"></td>
+        <div class="progress"><div class="progressbar"><div style="width:0%;"></div></div></div>
+    {{/if}}
+    <div class="cancel"><button type="button">Отменить загрузку</button></div>
+</div>
+</script>
+
+<script id="template-download" type="text/x-jquery-tmpl">
+{{if error}}
+    <div class="template-download{{if error}} ui-state-error{{/if}} template-upload-photo">
+        <div class="error">
+            {{if error === 'maxFileSize'}}Файл слишком большой
+            {{else error === 'minFileSize'}}Файл слишком маленький
+            {{else error === 'acceptFileTypes'}}Недопустимый тип файла
+            {{else error === 'maxNumberOfFiles'}}Превышено допустимое количество файлов
+            {{else error === 'uploadedBytes'}}Превышен размер файла при загрузке
+            {{else error === 'emptyResult'}}Пустой ответ сервера
+            {{else}}${error}
+            {{/if}}
+        </div>
+        <div class="delete">
+            <button type="button" data-type="${delete_type}" data-url="${delete_url}">Удалить</button>
+        </div>
+    </div>
+{{else}}
+    <div class="template-download template-upload-photo">
+        <div class="preview">
+            {{if thumbnail_url}}
+                <a href="${url}"><img src="${thumbnail_url}" onload='CreatePhoto(this.parentNode);' width="119px" height="119px"></a>
+            {{/if}}
+        </div>
+        <div class="delete">
+            <input type="hidden" name="file" value="${id}" />
+            <button type="button" data-type="${delete_type}" data-url="${delete_url}&_method=DELETE">Удалить</button>
+        </div>
+    </div>
+{{/if}}
+</script>

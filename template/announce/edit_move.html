@@ -1,0 +1,35 @@
+<div class="built-container-silver">
+    <form id="form-announce" method='post' action="/announce/postmove">
+    <input type="hidden" name="id" value="#ANNOUNCEID" />
+
+    <div class="legend picture-knope">Перемещение объявления</div>
+    <div class="block-context">
+        <div>
+            <b>#TXTDIVISION &raquo; #TXTCATEGORY</b>
+            <p>#CAPTION</p>
+        </div>
+
+        <div>
+            Переместить в:
+            <select id="division" name="division" onchange="return annkit.listcat(this);">
+                <option value="">Выберите рубрику</option>
+                #DIVISION
+            </select>
+        </div>
+
+        <div>
+            <div class="caption">Защитный код:</div>
+            <div style="display: inline-block;">
+                <div style="float: left;">
+                    <a href='javascript:;' id="caplink"><img src="/ajax/captcha" id="capimage" width="132px" height="46px"/></a>
+                </div>
+                <div style="float: left;">
+                    <input type="text" name="captcha" id="captcha" maxlength="6"/><br />
+                    <input id="submit" type="submit" value="Переместить объявление" />
+                </div>
+            </div>
+        </div>
+
+    </div>
+    </form>
+</div>

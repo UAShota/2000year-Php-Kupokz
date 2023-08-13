@@ -1,0 +1,32 @@
+<div id="cm_page">
+    <div style="display: inline-block; width: 100%;">
+        <div id="announce-table" style="display: block; float: right; width: 210px; padding: 0px;">
+
+            <div class="legend left">Стоимость</div>
+            <div style="margin: 10px; width: 210px;">
+                <div class="#CLASS">
+                    <div class="announce-cost">#COST #CURRENCY</div><div class='announce-tag'>#TAGDESC</div>
+                </div>
+                <div style="clear: left; display: inline-block; margin-top: 10px;">
+                    <div style="float: right; margin-top: 7px; margin-left: 4px;" class="fav #FAVOURITE" onclick="AnQueryFavourite(this, #ANNOUNCEID)" title="Добавить в избранное"></div>
+                    <a style="float: left;" href="/cabuser/ticket/trade&id=#ANNOUNCEID" onclick="return SilentDialog(this, 520, 'Заказ товара №#ANNOUNCEID');" class="button-item-trade">Заказать товар</a>
+                </div>
+            </div>
+
+            <div class="legend left">Фото</div>
+            <img class="lazy" data-original="#IMAGEPATH" src="images/ajax-loader.gif" width="210px" height="210px" />
+            <div id="gallery"><ul>#LIGHTBOX</ul></div>
+            <div class="header-small-data"></div>
+        </div>
+
+        <div style="margin-right: 220px;">
+            <div class="legend none">#ACTION &raquo; <span>Объявление ##ANNOUNCEID</span></div>
+            <h3>#CAPTION</h3>
+            <p>#TEXTDATA</p>
+            <p><b>#CITY</b>, #DATELIFE, в наличии: <b>#COUNT #MEAS</b></p>
+        </div>
+    </div>
+</div>
+<script>
+    CreateGallery();
+</script>

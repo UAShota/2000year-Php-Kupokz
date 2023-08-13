@@ -1,0 +1,30 @@
+<div id="cm_page">
+    <div class="legend left">Контактная информация</div>
+    <div style="display: inline-block; width: 100%; margin-top: 20px;">
+        <div style="float: left;">
+            <div>Мы находимся по адресу:</div>
+            <div>г. #CITY, #LOCATION_STREET</div>
+        </div>
+
+        <div style="float: right; width: 360px; margin-bottom: 15px;">
+            <div style="float: left;">
+                <a href="http://#SITEPATH/user/#USERID" style="display: block;">
+                    <img class="lazy" data-original="/#IMAGEPATH" src="/images/ajax-loader.gif" width="81px" height="81px" />
+                </a>
+            </div>
+            <div style="margin-left: 90px;">
+                <a class="link-silver" href="http://#SITEPATH/user/#USERID">#LOGIN #NAMELAST #NAMEFIRST #NAMEMIDDLE</a><br />
+                <span class="icon-default icon-mail"></span><a href="http://#SITEPATH/cabuser/mailbox/write&id=#USERID">Написать сообщение</a>
+                <div>#CONTACT</div>
+            </div>
+        </div>
+    </div>
+
+    <div><div id="map_canvas_view" title="Местонахождение компании"></div></div>
+</div>
+<script src="https://maps.googleapis.com/maps/api/js?sensor=true"></script>
+<script>
+$(function () {
+    $("#map_canvas_view").gmap(#LOCATIONMAP);
+});
+</script>

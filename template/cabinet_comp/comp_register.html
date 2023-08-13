@@ -1,0 +1,71 @@
+<div class="built-container-silver">
+    <form id="company-register" action="/cabcomp/registerpost" method="post">
+    <input type="hidden" name="uid" value="#UPLOADID" />
+
+    <div class="legend picture-persone">Создание компании</div>
+    <div class="block-context">
+        <div>
+            <div class="caption">Наименование компании:</div>
+            <div><input name="caption" id="caption" type="text" maxlength="60" size="60"/></div>
+        </div>
+
+        <div>
+            <div class="caption">Рубрика компании:</div>
+            <select name="category" id="category" onchange="return annkit.listcatcom(this);">
+                <option value="">Выберите рубрику</option>
+                #CATEGORY
+            </select>
+        </div>
+
+        <div>
+            <div class="caption">Желаемый домены (Если укажете несколько - будет отобран один по желанию администрации в порядке следования):</div>
+            <div>
+                <textarea name="subdomain" id="subdomain" rows="5"></textarea>
+            </div>
+        </div>
+        <hr />
+
+        <div style="float: left; min-height: 230px;">
+            <div class="caption">Логотип:</div>
+            #AJAXPICTPL
+            <div id="logotype_fileupload" style="float: left; width: 140px;">
+                <label class="fileinput-button">
+                    <span>Выбрать</span>
+                    <input name="files[]" type="file" />
+                </label>
+                <br /><br />
+                <div class="files"></div>
+            </div>
+        </div>
+
+        <div style="margin-left: 140px;">
+            <div class="caption">Описание компании:</div>
+            <textarea name="textdata" id="textdata" class="bbcodefull" cols="90" rows="20"></textarea>
+        </div>
+    </div>
+
+    <div class="legend picture-address">Ваш адрес</div>
+    <div class="block-context">
+
+        <div class="caption">Город:</div>
+        <div><select name="id_city" id="id_city">#CITY</select></div>
+
+        <div class="caption">Физический адрес:</div>
+        <div><input name="location_street" type="text" value="#LOCATIONSTREET" maxlength="250" size="70"/></div>
+    </div>
+
+    <div class="legend picture-contact">Контакты</div>
+    <div class="block-context">
+        <div>
+            <div>#CONTACT</div>
+        </div>
+    </div>
+
+    <div class="legend"><input type="submit" value="Создать компанию" /></div>
+    </form>
+</div>
+<script>
+$(function () {
+    CreatePhotoLoader("#logotype_fileupload", #PHOTOSIZE, 1, "logotype[]", #JSONPHOTO);
+});
+</script>

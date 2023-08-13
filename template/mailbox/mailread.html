@@ -1,0 +1,31 @@
+<div id="mailbox" style="margin: 0px auto;">
+    <div>
+        <div style="float: left; font-size: 17px; font-weight: bold;">Личное сообщение</div>
+        <a class="button-silver" style="float: right;" href="/cabuser/mailbox">Вернуться к сообщениям</a>
+    </div>
+
+    <table width="100%">
+        <tr><td rowspan="5" width="200px" style="vertical-align: top;">
+            <a href="http://#SITEPATH/user/#USERID" style="display: block;">
+                <img class="lazy" data-original="/#IMAGEPATH" src="/images/ajax-loader.gif" width="190x" height="190px" />
+            </a>
+        </td></tr>
+        <tr><td class="title">
+            <b>#FROMTO: <a href="/user/#USERID">#USERNAME</a></b>&nbsp;&nbsp;#DATELIFE
+        </td></tr>
+        <tr><td>
+            <p class="title">
+                <b>Тема: <font color="black">#CAPTION</font></b>
+            </p>
+        </td></tr>
+        <tr><td>
+            <div class="textdata">
+                #TEXTDATA
+            </div>
+        </td></tr>
+        <tr><td>
+            <a class="link-button" href='/cabuser/mailbox/reply&id=#MAILID'>Ответить на это сообщение</a>
+            <a class="link-button" href='/cabuser/mailbox/delete&id=#MAILID&box=#PAGE'>Удалить сообщение</a>
+        </td></tr>
+    </table>
+</div>

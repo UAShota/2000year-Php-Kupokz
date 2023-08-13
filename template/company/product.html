@@ -1,0 +1,37 @@
+<div id="cm_page" style="padding-right: 10px;">
+    <div class="cm-header-small" style="padding-left: 0px; clear: none;">
+        <form id="form-order" class="orderlist-table">
+            <input type="hidden" name="osc" id="osc"/>
+            <input type="hidden" name="oby" id="oby"/>
+            <input type="hidden" name="page" id="page"/>
+            <input type="hidden" name="fl_gallery" id="fl_gallery"/>
+            <div id="gallery-block" class="order-none">
+                <div id="ta_1" class="gallery-item"><a href="javascript:;" class="icon-gallery-icon" onclick="return AnQueryGallery(1);"></a></div>
+                <div id="ta_0" class="gallery-item link-hover"><a href="javascript:;" class="icon-gallery-list" onclick="return AnQueryGallery(0);"></a></div>
+            </div>
+            <div class="order-none">
+                <select name="ppg" onchange="return AnQueryFilter();">#ITEMPERPAGE</select> <label>товаров на страницу</label>
+            </div>
+            <div class="order-none">
+                <label for="fl-photo">с фото</label>
+            </div>
+            <div class="order-none" style="line-height: 37px; margin-right: 0px;">
+                <input type="checkbox" name="fl_photo" id="fl-photo" onclick="return AnQueryFilterPhoto();"/>
+            </div>
+            <div class="order-none"><a href="javascript:;" id="cost" onclick="return AnQueryOrder(this);">по цене<span></span></a></div>
+            <div class="order-up"><a href="javascript:;" id="date" onclick="return AnQueryOrder(this);">по дате<span></span></a></div>
+            <div class="order-none">Найдено <span id="announce-count">#ITEMCOUNT</span> совпадения</div>
+        </form>
+    </div>
+
+    <div style="margin-top: 10px; padding-bottom: 5px; "><a href="/product/">Все товары</a> #CATPATH</div>
+    <div style="display: #GROUPVISIBLE;">
+        <div style="width: 100%; display: inline-block;">#FOLDER</div>
+    </div>
+    <div id="announce-data">#CONTENT</div>
+
+    <div class="selector-table">
+        <div style="float: left;"><a href='javascript:;' onclick='javascript: scroll(0,0); return false;'>Наверх ^</a></div>
+        <div id="pageselector-bottom">#PAGESELECTOR</div>
+    </div>
+</div>

@@ -1,0 +1,25 @@
+<form method="post" action="/cabuser/mailbox/post" style="padding: 15px 22px 10px 22px;">
+<input type="hidden" name="id" value="#USERID"/>
+<input type="hidden" name="referer" value="#REFERER"/>
+<table width="100%">
+    <tr><td rowspan="5" width="200px" style="vertical-align: top;">
+        <a href="http://#SITEPATH/user/#USERID" style="display: block;">
+            <img class="lazy photo" data-original="/#IMAGEPATH" src="/images/ajax-loader.gif" />
+        </a>
+    </td></tr>
+    <tr><td class="title">
+        Кому: <a href="/user/#TROLLID">#USERNAME</a>
+    </td></tr>
+    <tr><td>
+        <p class="title">Тема:</p>
+        <input name="mailcaption" id="mailcaption" class="mailtext" placeholder="Тема сообщения" value="" type="text" maxlength="100" size="60"/>
+    </td></tr>
+    <tr><td>
+        <p class="title">Сообщение:</p>
+        <textarea name="mailtext" id="mailtext" class="mailtext" placeholder="Текст сообщения" cols="62" rows="6"></textarea>
+    </td></tr>
+    <tr><td>
+        <input type="submit" value="Отправить"/>
+    </td></tr>
+</table>
+</form>

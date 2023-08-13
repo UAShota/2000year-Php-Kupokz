@@ -1,0 +1,36 @@
+<div class="built-container-silver">
+    <form id="company-register" action="/cabcomp/contactpost" method="post">
+    <input type="hidden" id="gmap_mark_value" name="gmap_mark_value" value="#LOCATIONMAP" />
+
+    <div class="legend picture-contact">Контактные данные компании</div>
+    <div class="block-context">
+        <div>
+            #CONTACT
+        </div>
+    </div>
+
+    <div class="legend picture-address">Ваш адрес</div>
+    <div class="block-context">
+
+        <div class="caption">Город:</div>
+        <div><select name="id_city" id="id_city">#CITY</select></div>
+
+        <div class="caption">Физический адрес:</div>
+        <div><input name="location_street" type="text" value="#LOCATIONSTREET" maxlength="250" size="70"/></div>
+    </div>
+
+    <div class="legend picture-contact">Местоположение</div>
+    <div class="block-context">
+        <input type="button" id="gmap_mark" value="Выставить маркер"/>
+        <div id="map_canvas"></div>
+    </div>
+
+    <div class="legend"><input type="submit" value="Сохранить изменения" /></div>
+    </form>
+</div>
+<script src="https://maps.googleapis.com/maps/api/js?sensor=true"></script>
+<script>
+$(function () {
+    $("#map_canvas").gmap(#LOCATIONMAP);
+});
+</script>

@@ -1,0 +1,98 @@
+<div class="built-container-silver">
+    <form enctype="multipart/form-data" id="form-announce-fast" method='post' action="/cabcomp/postcreateitem">
+    <input type="hidden" name="uid" value="#UPLOADID" />
+
+    <div class="legend picture-knope">
+        Добавление объявления в <a href="/cabcomp/cat">Корневая группа</a>
+        #GROUPLINK
+    </div>
+    <div class="block-context">
+
+        <div>
+            <div class="caption">Выберите рубрику:</div>
+            <div>
+                <select id="division" name="category" onchange="return annkit.listcat(this);">
+                    <option value="">Выберите рубрику</option>
+                    #DIVISION
+                </select>
+            </div>
+            <div class="caption">Выберите группу:</div>
+            <div>
+                <select id="group" name="group">
+                    <option value="0">Корневой каталог</option>
+                    #GROUPTREE
+                </select>
+            </div>
+            <hr />
+        </div>
+
+        <div>
+            <div class="caption">Выберите тип сделки:</div>
+            <div>
+                <select id="action" name="action">
+                    <option value="">Выберите рубрику</option>
+                    #ACTION
+                </select>
+            </div>
+        </div>
+
+        <div>
+            <div class="caption">Стоимость:</div>
+            <input id="cost" name="cost" type="text" maxlength="10" size="4" value=""/>
+            <select id="currency" name="currency">#CURRENCY</select>
+        </div>
+
+        <div>
+            <div class="caption">Количество:</div>
+            <input id="itemcount" name="itemcount" type="text" maxlength="10" size="5" value=""/>
+            <select id="meas" name="meas">#MEAS</select>
+        </div>
+
+    </div>
+
+    <div class="legend picture-knope">Описание</div>
+    <div class="block-context">
+
+        <div>
+            <div class="caption">Заголовок объявления:</div>
+            <input id="caption" name="caption" type="text" maxlength="60" size="78"/>
+        </div>
+
+        <div>
+            <div class="caption">Текст объявления:</div>
+            <textarea class="bbcode" id="textdata" name="textdata" cols="61" rows="15"></textarea>
+            <hr />
+        </div>
+
+        <div style="display: inline-block; min-height: 230px;">
+            <div class="caption">Фотографии:</div>
+            #AJAXPICTPL
+            <div id="photo_fileupload" style="float: left; width: 140px;">
+                <label class="fileinput-button">
+                    <span>Главная</span>
+                    <input name="photo[]" type="file" />
+                </label>
+                <br /><br />
+                <div class="files"></div>
+            </div>
+            <div id="thumb_fileupload" style="margin-left: 145px;">
+                <label class="fileinput-button">
+                    <span>Еще фото</span>
+                    <input name="thumb[]" type="file" multiple="1" />
+                </label>
+                <br /><br />
+                <div class="files"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="legend"><input type="submit" value="Добавить объявление" /></div>
+    </form>
+</div>
+
+<script>
+$(function () {
+    CreatePhotoLoader("#photo_fileupload", #PHOTOSIZE, 1, "photo[]", #JSONPHOTO);
+    CreatePhotoLoader("#thumb_fileupload", #THUMBSIZE, #PHOTOCOUNT, "thumb[]", #JSONTHUMB);
+});
+</script>

@@ -1,0 +1,35 @@
+<div class="header-small">
+    Управление товаром  в <a href="/cabcomp/cat">Корневая группа</a> #GROUPLINK
+</div>
+<div class="block-context-clear" style="padding-right: 0px;">
+    <table width="100%" cellpadding="0" cellspacing="0">
+    <tr>
+        <td class="company-group-tree" style="vertical-align: top;">
+            <ul id="treeview" class="filetree treeview-famfamfam">
+                <li><span class="folder"><a href="/cabcomp/cat">Корневая группа</a></span>
+                <ul>
+                    #GROUPTREE
+                </li>
+                </ul>
+            </ul>
+        </td>
+        <td style="vertical-align: top;">
+            <div>
+                <a class="link-button" href="/cabcomp/newitem&parent=#GROUPID">Добавить товар</a>
+                <a class="link-button" href="/cabcomp/newgroup&parent=#GROUPID">Добавить категорию</a>
+            </div>
+            <br />
+            <table class="company-table-editor" cellspacing="0" cellspacing="0">
+                <tr>
+                    <th width="36px"></th>
+                    <th>Наименование</th>
+                    <th>Цена товара</th>
+                    <th>Наличие</th>
+                    <th>Действие</th>
+                </tr>
+                #GROUPLIST
+            </table>
+        </td>
+    </tr>
+    </table>
+</div>

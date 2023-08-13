@@ -1,0 +1,62 @@
+<div id="ticketrade" style="padding: 0px 10px;">
+<form id="form-trade" method="post" action="/cabuser/ticket/tradepost">
+    <input type="hidden" name="id" value="#ANNOUNCEID" />
+
+    <div>
+        <div style="float: right;">#CONTACT</div>
+        <div>
+            <p class="caption"><a href="#COMPATH">#COMPANY</a></p>
+            <div>г. #CITY, #LOCATION_STREET</div>
+        </div>
+    </div>
+    <div class="separator-average-bottom"></div>
+
+    <div id="announce-table" style="margin-top: 5px;">
+        <div style="width: 130px; float: left;">
+            <a href="#COMPATH/item/#ANNOUNCEID"><img class="photo" src="/#IMAGEPATH" width="119px" height="119px" /></a>
+        </div>
+        <div style="display: inline-block;">
+            <p class="caption" style="width: 360px;"><a href="#COMPATH/item/#ANNOUNCEID">#CAPTION</a></p>
+            <div class="#CLASS">
+                <div class="announce-cost">#COST #CURRENCY</div><div class='announce-tag'>#TAGDESC</div>
+            </div>
+        </div>
+        <div style="text-align: right;">
+            Кол-во: <input type="text" maxlength="4" size="4" name="count" /> <b>#MEAS.</b>
+        </div>
+    </div>
+    <div class="separator-average-bottom"></div>
+
+
+    <table class="contact">
+        <tr>
+            <td class="border">Ваше имя <span class="required">*</span></td>
+            <td class="border"><input class="control" type="text" name="name" id="name" maxlength="60" /></td>
+        </tr>
+        <tr>
+            <td class="border">Ваш телефон <span class="required">*</span></td>
+            <td class="border"><input class="control" type="text" name="phone" id="phone" maxlength="60" /></td>
+        </tr>
+        <tr>
+            <td>Ваш e-mail <span class="required">*</span></td>
+            <td><input class="control" type="text" name="email" id="email" maxlength="60" /></td>
+        </tr>
+    </table>
+    <div class="separator-average-bottom"></div>
+
+    <div style="display: inline-block; margin-top: 5px;">
+        <div style="float: left;">
+            <textarea style="width: 180px;" rows="3" placeholder="Здесь Вы можете указать комментарий"></textarea>
+        </div>
+        <div style="float: right; margin-left: 15px;">
+            <div class='captcha'>
+                <a href='javascript:;' id="caplink"><img src="/ajax/captcha" id="capimage" /></a>
+            </div>
+            <div style="float: left;">
+                <input type="text" name="captcha" id="captcha" maxlength="6" size="13" placeholder="Защитный код"/><br />
+                <input id="submit" type="submit" name="tradepost" value="Отправить запрос" />
+            </div>
+        </div>
+    </div>
+</form>
+</div>

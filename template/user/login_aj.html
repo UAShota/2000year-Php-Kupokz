@@ -1,0 +1,20 @@
+<form id="form-login" method="post" action="/user/postlogin" style="padding: 15px 0px 10px 22px;">
+    <div>
+        <div class="caption">Логин:</div>
+        <div><input type="text" name="login" id="login" maxlength="20" size="35"/></div>
+    </div>
+
+    <div>
+        <div class="caption">Пароль: <a href="/mixed/passlost">Забыли?</a></div>
+        <div><input type="password" name="pwd" id="pwd" maxlength="20" size="35"/></div>
+    </div>
+
+    <div style="margin-left: 0px; padding-left: 0px;">
+        <input type="checkbox" name="remember" id="remember"/>
+        <label for="remember"> Запомнить меня</label>
+        <input type="submit" value="Войти" />
+    </div>
+</form>
+<script>
+    document.getElementById("login").focus();
+</script>

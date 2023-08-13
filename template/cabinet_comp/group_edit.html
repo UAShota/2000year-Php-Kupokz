@@ -1,0 +1,33 @@
+<div class="built-container-silver">
+    <div class="legend picture-knope">
+        Редактирование группы #CAPTION в
+        <a href="/cabcomp/cat">Корневая группа</a> #GROUPLINK
+    </div>
+    </div>
+    <div class="block-context">
+
+    <form action="/cabcomp/posteditgroup" method="post">
+        <input type="hidden" name="group" value="#GROUPID" />
+        <table>
+            <tr>
+                <td>Корневая группа:</td>
+                <td>
+                    <select name="parent">
+                        <option value="0">Корневая группа</option>
+                        #GROUPTREE
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Название группы:</td>
+                <td><input type="text" name="caption" value="#CAPTION" maxlength="60" size="60" /></td>
+            </tr>
+            <tr>
+                <td><input type="submit" value="Сохранить" /></td>
+                <td><input type="reset" value="Сбросить" /></td>
+            </tr>
+        </table>
+
+    </form>
+    </div>
+</div>

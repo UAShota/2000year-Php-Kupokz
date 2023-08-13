@@ -1,0 +1,99 @@
+<div class="built-container-silver">
+    <form enctype="multipart/form-data" id="form-announce" method='post' action="/announce/update">
+    <input type="hidden" name="id" value="#ANNOUNCEID" />
+    <input type="hidden" name="uid" value="#UPLOADID" />
+
+    <div class="legend picture-knope">Редактирование объявления</div>
+    <div class="block-context">
+
+        <div>
+            <div class="caption">Город:</div>
+            <select id="city" name="city"><option value="">Выберите город</option>#CITY</select>
+            <hr />
+        </div>
+
+        <div>
+            <div class="caption">Выберите рубрику:</div>
+            <div>#DIVISION</div>
+            <hr />
+        </div>
+
+        <div>
+            <div class="caption">Выберите тип сделки:</div>
+            <div>
+                <select id="action" name="action">#ACTION</select>
+            </div>
+        </div>
+
+        <div>
+            <div class="caption">Стоимость:</div>
+            <input id="cost" name="cost" type="text" maxlength="10" size="4" value="#COST"/>
+            <select id="currency" name="currency">#CURRENCY</select>
+        </div>
+
+    </div>
+
+    <div class="legend picture-knope">Описание</div>
+    <div class="block-context">
+
+        <div>
+            <div class="caption">Заголовок объявления:</div>
+            <input id="caption" name="caption" type="text" maxlength="90" size="120" value="#CAPTION"/>
+        </div>
+
+        <div>
+            <div class="caption">Текст объявления:</div>
+            <textarea class="bbcode" id="textdata" name="textdata" cols="93" rows="15">#TEXTDATA</textarea>
+            <hr />
+        </div>
+
+        <div style="display: inline-block; min-height: 230px;">
+            <div class="caption">Фотографии:</div>
+            #AJAXPICTPL
+            <div id="photo_fileupload" style="float: left; width: 140px;">
+                <label class="fileinput-button">
+                    <span>Главная</span>
+                    <input name="photo[]" type="file" />
+                </label>
+                <br /><br />
+                <div class="files"></div>
+            </div>
+            <div id="thumb_fileupload" style="margin-left: 145px;">
+                <label class="fileinput-button">
+                    <span>Еще фото</span>
+                    <input name="thumb[]" type="file" multiple="1" />
+                </label>
+                <br /><br />
+                <div class="files"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="legend picture-contact">Контактные данные:</div>
+    <div class="block-context">
+        <div>
+            #CONTACT
+        </div>
+    </div>
+
+    <div class="legend picture-knope">Защитный код на картинке:</div>
+    <div class="block-context">
+        <div style="display: inline-block;">
+            <div class='captcha'>
+                <a href='javascript:;' id="caplink"><img src="/ajax/captcha" id="capimage" /></a>
+            </div>
+            <div style="float: left;">
+                <input type="text" name="captcha" id="captcha" maxlength="6"/><br />
+                <input id="submit" type="submit" value="Сохранить изменения" />
+            </div>
+        </div>
+    </div>
+    </form>
+</div>
+
+<script>
+$(function () {
+    CreatePhotoLoader("#photo_fileupload", #PHOTOSIZE, 1, "photo[]", #JSONPHOTO);
+    CreatePhotoLoader("#thumb_fileupload", #THUMBSIZE, #PHOTOCOUNT, "thumb[]", #JSONTHUMB);
+});
+</script>

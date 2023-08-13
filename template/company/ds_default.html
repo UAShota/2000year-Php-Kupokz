@@ -1,0 +1,193 @@
+<div class="ri-tpl-object wrapped-margin">
+<table class="ri-tpl-table">
+<tr>
+    <!--<th>Макет</th>-->
+    <th>Сайт</th>
+    <th>Шапка</th>
+    <th>Страница</th>
+    <th style="border-right: none;">Легенда</th>
+</tr>
+<tr>
+    <!--<td width="210px">
+        <table>
+        <tr>
+            <td>
+                Стандарт
+                <a id="testlnk" href="/?design&type=template&call=Template" onclick="return DesignTheme(this);">
+                    выбрать другой<br />
+                    <center><img id="thumbnail" src="/data/company/themes/default/thumb.png" width="200px" height="130px" /></center>
+                </a>
+            </td>
+        </tr>
+        </table>
+    </td>-->
+    <td>
+        <table>
+        <tr>
+        <!--todo-->
+            <td><a href="/?design&type=body&folder=17" onclick="return DesignDialog(this, 'body');">Выбрать фон сайта</a></td>
+            <td><span class="ri-tpl-link-dropper" onclick="return DesignClear('body');"></span></td>
+        </tr>
+        <tr>
+            <td>Цвет фона</td>
+            <td><span class="ri-tpl-color" id="ri-css-body-back"></span></td>
+        </tr>
+        </table>
+    </td>
+    <td>
+        <table>
+        <tr>
+            <td><a href="/?design&type=head&folder=18" onclick="return DesignDialog(this, 'head');">Выбрать шапку сайта </a></td>
+            <td><span class="ri-tpl-link-dropper" onclick="return DesignClear('#cm_area');"></span></td>
+        </tr>
+        <tr>
+            <td>Цвет текста</td>
+            <td><span class="ri-tpl-color" id="ri-css-head-text"></span></td>
+        </tr>
+        </table>
+    </td>
+    <td>
+        <table>
+        <tr>
+            <td><a href="/?design&type=area&folder=17" onclick="return DesignDialog(this, 'area');">Выбрать фон страницы</a></td>
+            <td><span class="ri-tpl-link-dropper" onclick="return DesignClear('#cm_content');"></span></td>
+        </tr>
+        <tr>
+            <td>Цвет фона</td>
+            <td><span class="ri-tpl-color" id="ri-css-area-back"></span></td>
+        </tr>
+        <tr>
+            <td>Цвет рамки</td>
+            <td><span class="ri-tpl-color" id="ri-css-area-border"></span></td>
+        </tr>
+        <tr>
+            <td>Цвет кнопки</td>
+            <td><span class="ri-tpl-color" id="ri-css-area-hot"></span></td>
+        </tr>
+        <tr>
+            <td>Цвет текста</td>
+            <td><span class="ri-tpl-color" id="ri-css-area-text"></span></td>
+        </tr>
+        <tr>
+            <td>Цвет ссылок</td>
+            <td><span class="ri-tpl-color" id="ri-css-area-link"></span></td>
+        </tr>
+        </table>
+    </td>
+    <td>
+        <table>
+        <tr>
+            <td>Цвет легенды</td>
+            <td><span class="ri-tpl-color" id="ri-css-legend-back"></span></td>
+        </tr>
+        <tr>
+            <td>Цвет текста</td>
+            <td><span class="ri-tpl-color" id="ri-css-legend-text"></span></td>
+        </tr>
+        </table>
+    </td>
+</tr>
+    <tr>
+        <td colspan="5" style="text-align: center;">
+            <input id="submit" type="button" value="Сохранить изменения" onclick="return DesignSave();" />
+            <!--disabled="true"-->
+        </td>
+    </tr>
+</table>
+</div>
+<!-- jQuery has remove class definition -->
+<div id="tpl-template-body" style="padding: 15px 0px 0px 15px; display: none;"></div>
+<div id="tpl-template-area" style="padding: 15px 0px 0px 15px; display: none;"></div>
+<div id="tpl-template-logo" style="padding: 15px 0px 0px 15px; display: none;"></div>
+<div id="tpl-template-head" style="padding: 15px 0px 0px 15px; display: none;"></div>
+
+<script>
+function DesignDialog(link, type)
+{
+    if (type === "body") {
+        width = 450;
+        height = 460;
+        title = "Фоновая картинка сайта";
+    } else
+    if (type === "head") {
+        width = 760;
+        height = 455;
+        title = "Шапка сайта";
+    } else
+    if (type === "area") {
+        width = 450;
+        height = 460;
+        title = "Фоновая картинка страницы";
+    } else {
+        return false;
+    }
+    DialogNative("#tpl-template-" + type, link, width, height, title);
+    return false;
+}
+
+function DesignClear(elementName)
+{
+    $(elementName).css("background-image", "none");
+}
+
+function DesignApply(type, draw)
+{
+    if (type === "body") {
+        $("body").css("background-image", $(draw).css("background-image"));
+    } else
+    if (type === "head") {
+        $("#cm_area").css("background-image", $(draw).css("background-image").replace(/preview\//i, ""));
+    } else
+    if (type === "area") {
+        $("#cm_content").css("background-image", $(draw).css("background-image"));
+    } else {
+        return false;
+    }
+}
+
+
+
+
+    function DesignSave()
+    {
+        defkit.barShow();
+
+        var vector = new Array();
+        for (index = 0; index < PickerData.localVector.length; index++) {
+            item = PickerData.localVector[index];
+            vector.push(new Array(item[1], item[2], $(item[1]).css(item[2])));
+        }
+        $.post("/?design&type=preview&aj", {"vector": vector}, function(Request) {
+            alert(Request);
+            defkit.barHide();
+        });
+
+        return false;
+    }
+    /*function ActionTemplate(folder)
+    {
+        $("#thumbnail").attr("src", "/data/company/themes/" + folder + "/thumbphoto.png");
+        $("#testcss").attr("href", "/data/company/themes/" + folder + "/style.css");
+    }*/
+
+
+$(document).ready( function()
+{
+    var vector = [
+        ["#ri-css-body-back",      "body",                 "background-color", true],
+        [undefined,                "body",                 "background-image", false],
+        ["#ri-css-area-back",      "#cm_content",          "background-color", true],
+        [undefined,                "#cm_content",          "background-image", false],
+        ["#ri-css-area-border",    "#cm_body",             "background-color", true],
+        ["#ri-css-area-hot",       "#cm_area .selected",   "background-color", true],
+        [undefined,                "#cm_area",             "background-image", false],
+        ["#ri-css-area-text",      "#cm_page",             "color", true],
+        ["#ri-css-area-link",      "#cm_content a",        "color", true],
+        ["#ri-css-head-text",      "#cm_header",           "color", true],
+        ["#ri-css-legend-back",    ".legend",              "background-color", true],
+        ["#ri-css-legend-text",    ".legend",              "color", true]
+    ];
+    /*$(".jPicker").remove();*/
+    PickerData = $.jPicker.assign(vector);
+});
+</script>

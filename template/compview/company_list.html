@@ -1,0 +1,33 @@
+<div class="built-container">
+    <div class="header-small">
+        <div id="category-relink">
+            #CATLINK Обзор
+        </div>
+    </div>
+    <div class="catlist-table">
+        #CATGROUP
+    </div>
+
+    <div class="header-small">
+        <form id="form-order" class="orderlist-table">
+            <input type="hidden" name="page" id="page"/>
+            <input type="hidden" name="fl_type" id="fl_type"/>
+            <div class="order-none">
+                <select name="ppg" onchange="return AnQueryFilter();">#ITEMPERPAGE</select> компаний на страницу
+            </div>
+        </form>
+    </div>
+
+    <div>
+        <h3><center>Найдено <span id="announce-count">#ITEMCOUNT</span> совпадения</center></h3>
+
+        <div id="announce-data">
+            #BLOCKDATA
+        </div>
+
+        <div class="selector-table">
+            <div style="float: left;"><a href='javascript:;' onclick='javascript: scroll(0,0); return false;'>Наверх ^</a></div>
+            <div id="pageselector-bottom">#PAGESELECTOR</div>
+        </div>
+    </div>
+</div>

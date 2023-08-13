@@ -1,0 +1,52 @@
+<div class="built-container-silver">
+    <form id="form-banner" method="post" enctype="multipart/form-data" action="/cabuser/banner/&m=post">
+    <div class="legend picture-knope">Создание баннера</div>
+    <div class="block-context">
+        <table width="100%">
+            <!--<tr>
+                <td>Город:</td>
+                <td><select>#CITY</select></td>
+            </tr>
+            <tr>
+                <td>Рубрика:</td>
+                <td><select onchange="return annkit.listcat(this);">#CATEGORY</select></td>
+            </tr>-->
+            <tr>
+                <td>Выберите баннер:</td>
+                <td><input name="file" type="file" /> размер <b>1000х90</b> не более <b>300кб</b></td>
+            </tr>
+            <tr>
+                <td>Название:</td>
+                <td><input id="caption" name="caption" type="text" style="width: 600px;" /></td>
+            </tr>
+            <tr>
+                <td>Ссылка перехода:</td>
+                <td><input id="linkurl" name="linkurl" type="text" style="width: 600px;" /></td>
+            </tr>
+            <tr>
+                <td>Лимит показов:</td>
+                <td>
+                    <select name="limshow" onchange="setValueBySelect(this, 'bannercost');">#LIMSHOW</select> стоимость: <b><span id="bannercost">1</span></b>$ <b>Не верьте, это бесплатно! :)</b>
+                </td>
+            </tr>
+            <!--<tr>
+                <td>Лимит времени:</td>
+                <td><select>#LIMDATE</select></td>
+            </tr>-->
+        </table>
+    </div>
+
+    <div class="legend picture-knope">Защитный код на картинке:</div>
+    <div class="block-context">
+        <div style="display: inline-block;">
+            <div class='captcha'>
+                <a href='javascript:;' id="caplink"><img src="/ajax/captcha" id="capimage" /></a>
+            </div>
+            <div style="float: left;">
+                <input type="text" name="captcha" id="captcha" maxlength="6"/><br />
+                <input id="submit" type="submit" value="Сохранить баннер" />
+            </div>
+        </div>
+    </div>
+    </form>
+</div>

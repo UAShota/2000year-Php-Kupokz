@@ -1,0 +1,53 @@
+<div class="built-block">
+    #BANNERHEADER
+    <div class="header-small">
+        <div id="category-relink">
+            #CATLINK Обзор
+        </div>
+    </div>
+    <div class="catlist-table">
+        #CATGROUP
+    </div>
+
+    <div class="header-small" style="margin-bottom: 15px;">
+        <form id="form-order" class="orderlist-table">
+            <input type="hidden" name="osc" id="osc"/>
+            <input type="hidden" name="oby" id="oby"/>
+            <input type="hidden" name="page" id="page"/>
+            <input type="hidden" name="fl_type" id="fl_type"/>
+            <div class="order-none">
+                <select name="ppg" onchange="return AnQueryFilter();">#ITEMPERPAGE</select> <label>товаров на страницу</label>
+            </div>
+            <div class="order-none">
+                <label for="fl-photo">с фото</label>
+            </div>
+            <div class="order-none" style="line-height: 37px; margin-right: 0px;">
+                <input type="checkbox" name="fl_photo" id="fl-photo" onclick="return AnQueryFilterPhoto();"/>
+            </div>
+            <div class="order-none"><a href="javascript:;" id="cost" onclick="return AnQueryOrder(this);">по цене<span></span></a></div>
+            <div class="order-up"><a href="javascript:;" id="date" onclick="return AnQueryOrder(this);">по дате<span></span></a></div>
+            <div class="order-none">Найдено <span id="announce-count">#ITEMCOUNT</span> совпадения</div>
+        </form>
+    </div>
+
+    <div style="float: left; margin-left: 8px;">
+        <form id="form-filter">
+            #BLOCKFILTER
+        </form>
+        <!-- Яндекс.Директ -->
+        <div id="yandex_ad" style="width: 219px; float: left; margin: 15px 0px 0px 0px;"></div>
+    </div>
+
+    <div style='margin-left: 240px;'>
+        <div class="actionlist-table" id="typeaction">
+            #BLOCKACTION
+        </div>
+        <div id="announce-data">
+            #BLOCKDATA
+        </div>
+        <div class="selector-table">
+            <div style="float: left;"><a href='javascript:;' onclick='javascript: scroll(0,0); return false;'>Наверх ^</a></div>
+            <div id="pageselector-bottom">#PAGESELECTOR</div>
+        </div>
+    </div>
+</div>

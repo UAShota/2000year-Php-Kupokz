@@ -1,0 +1,66 @@
+#HEADER
+<style>
+    body {
+        background: #213F53 url(/images/background.png) repeat-x;
+    }
+    a {
+        color: #387CA6;
+        text-decoration: none;
+    }
+    a:hover {
+        color: #CD0021;
+        text-decoration: underline;
+    }
+    .adm-title {
+        color: #D0D0D0;
+        margin-top: 42px;
+        text-align: center;
+    }
+    .adm-body {
+        margin-top: 10px;
+        display: inline-block;
+        width: 100%;
+        background-color: whiteSmoke;
+        -webkit-border-radius: 6px;
+           -moz-border-radius: 6px;
+                border-radius: 6px;
+    }
+    .adm-body hr {
+        border: none;
+        border-top: 1px dotted silver
+    }
+    .adm-subtitle {
+        padding: 3px;
+        text-align: center;
+        background: white;
+    }
+</style>
+<body>
+<div id="main-userpanel" class="wrapped-width">
+    <div class="wrapped-margin">
+        #USERDATA
+        <div id="ajaxloader">
+            <img src="/images/ajax-progress.gif" height="10px" width="80px" style="float: left;"/>
+        </div>
+    </div>
+</div>
+<div id="main-inside" class="wrapped-margin">
+    <h1 class="adm-title">Панель администрирования</h1>
+    <div class="adm-body">
+        <div class="header-small" style="text-align: center;">
+            Административная панель &raquo; #BLOCKMODE
+        </div>
+        <div style="padding: 10px 10px 0px 10px; text-align: center;">
+            <a href="/admin/moder">Модерирование</a> |
+            <a href="/admin/company">Компании</a> |
+            <a href="/admin/category">Рубрикатор</a> |
+            <!--<a href="/admin/banner">Рекламные баннеры</a> |
+            <a href="/admin/parser">Парсер</a> |-->
+            <a href="/admin/stats">Статистика</a> |
+            <a href="/admin/errors">Системный лог</a> |
+            <a href="/admin/settings">Настройки</a>
+        </div>
+        #BLOCKDATA
+    </div>
+</div>
+</body>

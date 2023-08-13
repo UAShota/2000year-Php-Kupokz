@@ -1,0 +1,18 @@
+<div id="announce-table" class="#CLASS wide">
+    <div class="caption">
+        <a href="/item/#ANNOUNCEID">#CAPTION</a>
+    </div>
+    <div style="text-align: center;">
+        <a href="/item/#ANNOUNCEID"><img class="photowide lazy" data-original="/#IMAGEPATH" src="/images/ajax-loader.gif" width="150px" height="150px" /></a>
+    </div>
+
+    <div class="#CLASS" style="margin: 0px auto; padding: 5px 0px;">
+        <div class="announce-cost">#COST #CURRENCY</div><div class='announce-tag'>#TAGDESC</div>
+    </div>
+
+    <div class="meas">В наличии: #COUNT #MEAS</div>
+    <div>
+        <div class="fav #FAVOURITE" style="float: right; margin: 8px 14px 0px 0px;" onclick="AnQueryFavourite(this, #ANNOUNCEID)" title="Добавить в избранное"></div>
+        <a href="http://#SITEPATH/cabuser/ticket/trade&id=#ANNOUNCEID" onclick="return SilentDialog(this, 520, 'Заказ товара №#ANNOUNCEID');" style="margin: 0px auto; float: none;" class="button-item-trade">Заказать товар</a>
+    </div>
+</div>

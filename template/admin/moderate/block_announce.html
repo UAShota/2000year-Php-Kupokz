@@ -1,0 +1,17 @@
+<div id="block#ANNOUNCEID" class="state-container">
+    <div class="header-simple">
+        <a href="/announce/#ANNOUNCEID">№ #ANNOUNCEID:</a>
+        #CATEGORY &raquo; #CITY &raquo; <b>#CAPTION</b>
+    </div>
+    <div style="padding: 6px;">
+        <p style="margin-bottom: 0px;">
+            <a class="icon-default icon-approove" href="javascript:;" onclick="return admkit.approove('announce', #ANNOUNCEID);">Aproove</a>&nbsp;&nbsp;
+            <a class="icon-default icon-deproove" href="javascript:;" onclick="return admkit.deproove('announce', #ANNOUNCEID);">Deproove</a>
+            <a class="icon-default icon-move" href="javascript:;" onclick="return admkit.hidroove(#ANNOUNCEID)">Hide</a>
+            <a class="icon-default icon-edit" href="/announce/edit&id=#ANNOUNCEID">Edit</a>
+        </p>
+        #TEXTDATA
+        <p>#PICDATA</p>
+        <p>#CONTACT</p>
+    </div>
+</div>
